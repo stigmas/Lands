@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lands.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"             
+             Title="Login">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Login}"
+            Padding="20">
+            <Image
+                Margin="0,30"
+                Source="logoEurofic"
+                WidthRequest="150">
+            </Image>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label                    
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="E-mail"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"/>
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Keyboard="Email"
+                    Text="{Binding Email, Mode=TwoWay}"
+                    Placeholder="Enter your email"
+                    VerticalOptions="Center">
+                </Entry>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Password"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"/>
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    IsPassword="True"
+                    Text="{Binding Password, Mode=TwoWay}"
+                    Placeholder="Enter your password..."
+                    VerticalOptions="Center">
+                </Entry>
+            </Grid>
+            <StackLayout
+                Margin="0,50,0,0"
+                Orientation="Horizontal">
+                <Label
+                    HorizontalOptions="EndAndExpand"
+                    Text="Remember me"
+                    VerticalOptions="Center">
+                </Label>
+                <Switch
+                    IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                    HorizontalOptions="End">
+                </Switch>
+            </StackLayout>
+
+            <ActivityIndicator
+                IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                VerticalOptions="CenterAndExpand">
+            </ActivityIndicator>
+
+            <StackLayout>
+                <Button
+                    BackgroundColor="Navy"
+                    BorderRadius="23"
+                    Command="{Binding LoginCommand}"
+                    HeightRequest="46"
+                    TextColor="White"
+                    Text="Login"
+                    VerticalOptions="End">
+                </Button>
+                <Button
+                    BackgroundColor="Purple"
+                    BorderRadius="23"
+                    HeightRequest="43"
+                    TextColor="White"
+                    Text="Register"
+                    VerticalOptions="End">
+                </Button>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
