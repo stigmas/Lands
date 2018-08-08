@@ -21,7 +21,7 @@
                 <Label                    
                     Grid.Row="0"
                     Grid.Column="0"
-                    Text="E-mail"
+                    Text="E-mail" 
                     FontAttributes="Bold"
                     VerticalOptions="Center"/>
                 <Entry
@@ -66,12 +66,14 @@
                 VerticalOptions="CenterAndExpand">
             </ActivityIndicator>
 
-            <StackLayout>
+            <StackLayout
+                Orientation="Horizontal">
                 <Button
                     BackgroundColor="Navy"
                     BorderRadius="23"
                     Command="{Binding LoginCommand}"
                     HeightRequest="46"
+                    HorizontalOptions="FillAndExpand"
                     IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                     TextColor="White"
                     Text="Login"
@@ -81,6 +83,7 @@
                     BackgroundColor="Purple"
                     BorderRadius="23"
                     HeightRequest="43"
+                    HorizontalOptions="FillAndExpand"
                     IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                     TextColor="White"
                     Text="Register"
